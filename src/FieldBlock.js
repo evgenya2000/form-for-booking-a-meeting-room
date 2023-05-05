@@ -1,52 +1,55 @@
 import React from "react";
+import SelectTower from "./SelectTower";
+import SelectFloor from "./SelectFloor";
+import ChooseRoom from "./ChooseRoom";
+import SelectTime from "./SelectTime";
+import EnterComments from "./EnterComments";
 
 class FieldBlock extends React.Component {
     render() {
         return(
-            <div className="field-block" type={this.props.type}>
+            <div className="field-block">
                 <label>{this.props.name}</label>  
-                <input type="text" placeholder={this.props.placeholder}/>  
+                {this.props.field} 
             </div>
         );
     }
 }
 
-const fields = [
+const blocksFields = [
     {
         name: "Выберите башню:",
-        placeholder: "Search...",
+        field: SelectTower(),
         id: 1,
     },
     {
         name: "Выберите этаж:",
-        placeholder: "Search...",
+        field: SelectFloor(),
         id: 2,
     },
     {
         name: "Выберите комнату:",
-        placeholder: "Search...",
+        field: ChooseRoom(),
         id: 3,
     },
     {
         name: "Выберите время:",
-        placeholder: "Search...",
+        field: SelectTime(),
         id: 4,
     },
     {
         name: "Ваши комментарии:",
-        placeholder: "Enter comments...",
+        field: EnterComments(),
         id: 5,
-        type: "comments"
     },
 ]
 
-const formFields = fields.map((field) =>
+const formFields = blocksFields.map((block) =>
     <FieldBlock
-        name={field.name}
-        placeholder={field.placeholder}
-        key={field.id}
-        type={field.type}
+        name={block.name}
+        field={block.field}
+        key={block.id}
     />
 );
 
-export {fields, formFields};
+export {blocksFields, formFields};
