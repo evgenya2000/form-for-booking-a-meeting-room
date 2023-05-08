@@ -45,11 +45,11 @@ const blocksFields = [
 ]
 
 const formFields = blocksFields.map((block) =>
-    <FieldBlock
-        name={block.name}
-        field={block.field}
-        key={block.id}
-    />
+        <FieldBlock
+            name={block.name}
+            field={block.field}
+            key={block.id}
+        />
 );
 
-export {blocksFields, formFields};
+export {formFields};
