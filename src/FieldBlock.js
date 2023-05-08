@@ -8,7 +8,7 @@ import EnterComments from "./EnterComments";
 class FieldBlock extends React.Component {
     render() {
         return(
-            <div className="field-block">
+            <div className="field-block" id={this.props.name}>
                 <label>{this.props.name}</label>  
                 {this.props.field} 
             </div>

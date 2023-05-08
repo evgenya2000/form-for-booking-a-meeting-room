@@ -20,33 +20,38 @@ class SelectTimeBlock extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="date-and-time">
                 <input
                     type="date"
                     value={this.state.date}
                     min={moment().format('YYYY-MM-DD')}
                     name="date"
+                    className="date"
                     onChange={this.onTimeChangeHandler}
                 />
-                <input
-                    type="time"
-                    value={this.state.time_start}
-                    min='9:00'
-                    max='21:00'
-                    name="time_start"
-                    onChange={this.onTimeChangeHandler}
-                    required
-                />
-                <input
-                    type="time"
-                    value={this.state.time_end}
-                    min={this.state.time_start}
-                    max='21:00'
-                    name="time_end"
-                    onChange={this.onTimeChangeHandler}
-                    required
-                />
-            </>
+                <div className="time">
+                    <input
+                        type="time"
+                        value={this.state.time_start}
+                        /*min='9:00'
+                        max='21:00'*/
+                        name="time-start"
+                        className="time-start"
+                        onChange={this.onTimeChangeHandler}
+                        required
+                    />
+                    <input
+                        type="time"
+                        value={this.state.time_end}
+                        /*min={this.state.time_start}*/
+                        /*max='21:00'*/
+                        name="time-end"
+                        className="time-end"
+                        onChange={this.onTimeChangeHandler}
+                        required
+                    />
+                </div>
+            </div>
         );
     };
 }
