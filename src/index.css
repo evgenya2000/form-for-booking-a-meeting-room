@@ -5,31 +5,119 @@
 
 :root {
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    --main-blue: #AAD0EC;
+    --color-form: rgba(170, 208, 236, 0.24);
+    --color-field-outer: #EEEEEE;
+
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 200%;
     font-weight: 400;
+    text-align: center;
+}
+
+.header {
+    background-color: var(--main-blue);
+    border-radius: 34px;
+    padding: 5%;
+    margin-bottom: 4%;
+    width: 100%;
+}
+
+.form-block {
+    background: var(--color-form);
+    border-radius: 34px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.05%;
+    padding-bottom: 1%;
+    width: 100%;
+}
+
+.field-block {
+    background: var(--color-field-outer);
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 4%;
+    margin: 3%;
+    display: flex;
+}
+
+label, select, input {
+    width: 50%;
+}
+
+.date-and-time {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.date {
+    width: 98%;
+    margin-bottom: 2%;
+    margin-top: -3%;
+}
+.time {
+    display: flex;
+    margin-bottom: -3%;
+}
+.time-start {
+    margin-right: 1%;
+}
+.time-end {
+    margin-left: 1%;
+}
+.textarea {
+    align-self: stretch;
+    margin-top: -2%;
+    margin-bottom: -2%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-bottom: 3%;
+}
+
+.send, .clear {
+    font-size: 150%;
+    font-weight: 400;
+    flex-grow: 1;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: var(--main-blue);
+    border: none;
+    border-radius: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 label {
-    font-size: 32px;
+    font-size: 150%;
     font-weight: 200;
 }
 
-input {
-    font-size: 20px;
+input, select {
+    font-size: 105%;
     font-weight: 200;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 8px;
+    padding: 1%;
 }
 
-input::placeholder {
+input::placeholder, select {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 105%;
     font-weight: 200;
     color: #646363;
-}
-
-.send, .clear{
-    font-size: 32px;
-    font-weight: 400;
 }
