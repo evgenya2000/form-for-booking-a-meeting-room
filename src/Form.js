@@ -2,6 +2,7 @@ import React from "react";
 import { formFields } from "./FieldBlock";
 import ButtonSend from "./ButtonSend"
 import ButtonClear from "./ButtonClear"
+import moment from "moment";
 
 class Form extends React.Component {
     constructor(props){
@@ -17,8 +18,17 @@ class Form extends React.Component {
         formData.forEach(function(value, key){
             object[key] = value;
         });
+        
         var json = JSON.stringify(object);
-        console.log(json);
+        /*console.log(json);*/
+        if ("09:00:00" < object['time-start']+ ":00" &&
+         object['time-start']+ ":00" < object['time-end']+ ":00" && 
+         "21:00:00" >  object['time-end']+":00")
+        {
+            console.log(json);
+        }else{
+            alert('\n Начало работы переговорных 9:00\n Конец 21:00\n Указывайте начало и конец времени бронирования по образцу: 09:00 - 11:00');
+        };
     }
 
     render(){

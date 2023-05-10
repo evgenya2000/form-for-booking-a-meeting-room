@@ -6,15 +6,15 @@ class SelectTimeBlock extends React.Component {
         this.state = {
             /*date: moment().format("YYYY-MM-DDTkk:mm"),*/
             date:moment().format("YYYY-MM-DD"),
-            time_start: moment().format('HH:mm'),
-            time_end: moment().add('hours', 2).format('HH:mm')
-        };
+            time_start:'',
+            time_end:''
+        }
         this.onTimeChangeHandler = this.onTimeChangeHandler.bind(this);
     }
 
     onTimeChangeHandler(e) {
         this.setState({
-            [e.target.name]: e.target.value 
+            [e.target.name]: e.target.value,
         });
     }
 
@@ -32,9 +32,6 @@ class SelectTimeBlock extends React.Component {
                 <div className="time">
                     <input
                         type="time"
-                        value={this.state.time_start}
-                        /*min='9:00'
-                        max='21:00'*/
                         name="time-start"
                         className="time-start"
                         onChange={this.onTimeChangeHandler}
@@ -42,9 +39,6 @@ class SelectTimeBlock extends React.Component {
                     />
                     <input
                         type="time"
-                        value={this.state.time_end}
-                        /*min={this.state.time_start}*/
-                        /*max='21:00'*/
                         name="time-end"
                         className="time-end"
                         onChange={this.onTimeChangeHandler}
