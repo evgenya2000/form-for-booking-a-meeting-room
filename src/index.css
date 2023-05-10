@@ -49,7 +49,7 @@ h1 {
     display: flex;
 }
 
-label, select, input {
+label, select, input, textarea {
     width: 50%;
 }
 
@@ -73,9 +73,10 @@ label, select, input {
 .time-end {
     margin-left: 1%;
 }
-.textarea {
+textarea {
     align-self: stretch;
     margin-top: -2%;
+    margin-left: 1%;
     margin-bottom: -2%;
 }
 
@@ -106,7 +107,7 @@ label {
     font-weight: 200;
 }
 
-input, select {
+input, select, textarea {
     font-size: 105%;
     font-weight: 200;
     background-color: #D9D9D9;
@@ -115,7 +116,7 @@ input, select {
     padding: 1%;
 }
 
-input::placeholder, select {
+input::placeholder, select, textarea::placeholder {
     font-family: 'Roboto', sans-serif;
     font-size: 105%;
     font-weight: 200;
