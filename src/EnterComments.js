@@ -18,7 +18,7 @@ class EnterCommentsBlock extends React.Component {
     render() {
         return(
             <>
-            <input 
+            <textarea
                 className={this.props.name} 
                 value={this.state.comments} 
                 placeholder={this.props.placeholder} 
