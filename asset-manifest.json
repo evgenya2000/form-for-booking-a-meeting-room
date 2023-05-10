@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/form-for-booking-a-meeting-room/static/css/main.b60e2afc.css",
+    "main.js": "/form-for-booking-a-meeting-room/static/js/main.704d945e.js",
+    "index.html": "/form-for-booking-a-meeting-room/index.html",
+    "main.b60e2afc.css.map": "/form-for-booking-a-meeting-room/static/css/main.b60e2afc.css.map",
+    "main.704d945e.js.map": "/form-for-booking-a-meeting-room/static/js/main.704d945e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b60e2afc.css",
+    "static/js/main.704d945e.js"
+  ]
+}
