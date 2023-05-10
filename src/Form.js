@@ -2,13 +2,14 @@ import React from "react";
 import { formFields } from "./FieldBlock";
 import ButtonSend from "./ButtonSend"
 import ButtonClear from "./ButtonClear"
-import moment from "moment";
+import moment from "moment/moment"
 
 class Form extends React.Component {
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
 
     handleSubmit(event) {
         event.preventDefault();
@@ -19,15 +20,21 @@ class Form extends React.Component {
             object[key] = value;
         });
         
-        var json = JSON.stringify(object);
-        /*console.log(json);*/
-        if ("09:00:00" < object['time-start']+ ":00" &&
+        if ("09:00:00" <= object['time-start']+ ":00" &&
          object['time-start']+ ":00" < object['time-end']+ ":00" && 
-         "21:00:00" >  object['time-end']+":00")
+         "21:00:00" >=  object['time-end']+":00")
         {
-            console.log(json);
-        }else{
-            alert('\n Начало работы переговорных 9:00\n Конец 21:00\n Указывайте начало и конец времени бронирования по образцу: 09:00 - 11:00');
+            if (moment(object['date']).format("L") === moment().format("L")) {
+                if (object['time-start']+ ":00" >= moment().format('HH:mm:ss')){
+                    console.log(JSON.stringify(object));
+                } else {
+                    alert('\n Невозможно забронировать это время на текущую дату');
+                }
+                return;
+            }
+            console.log(JSON.stringify(object));
+        } else {
+            alert('\nРасписание работы переговорных комнат:\n 09:00 - 21:00\n Указывайте начало и конец интервала в бронировании, например: 09:00-11:00');
         };
     }
 

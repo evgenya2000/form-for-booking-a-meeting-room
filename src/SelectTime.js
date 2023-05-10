@@ -35,14 +35,12 @@ class SelectTimeBlock extends React.Component {
                         name="time-start"
                         className="time-start"
                         onChange={this.onTimeChangeHandler}
-                        required
                     />
                     <input
                         type="time"
                         name="time-end"
                         className="time-end"
                         onChange={this.onTimeChangeHandler}
-                        required
                     />
                 </div>
             </div>
